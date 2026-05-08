@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Condiment&family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-h1: "Anton", sans-serif;
+  --font-accent: "Condiment", cursive;
+  --font-mono: "Space Mono", monospace;
+
+  --color-neon: #6fff00;
+  --color-space-deep: #010828;
+  --color-cream: #fbfff1;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-fill: rgba(255, 255, 255, 0.02);
+
+  --spacing-xxl: 128px;
+}
+
+@layer base {
+  body {
+    @apply bg-space-deep text-cream font-mono overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .liquid-glass {
+    backdrop-filter: blur(12px);
+    background: var(--color-glass-fill);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: url("https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 50;
+    mix-blend-mode: overlay;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 30px rgba(111, 255, 0, 0.2);
+  }
+
+  .neon-glow-strong {
+    box-shadow: 0 0 50px rgba(111, 255, 0, 0.4);
+  }
+  
+  .text-shadow-neon {
+    text-shadow: 0 0 15px rgba(111, 255, 0, 0.5);
+  }
+}
